@@ -10,7 +10,7 @@
 	<version>2.3.1</version>
 	<description>
 		<![CDATA[<link rel="stylesheet" type="text/css" href="../modules/mod_flexheader3/flexheader3_backend.css" />
-		<a href="https://flexheader.andrehotzler.de/" target="_blank"><img class="flimage" src="../modules/mod_flexheader3/flexheader3_large.png" alt="Flexheader3"></a>
+		<a href="https://www.andrehotzler.de/" target="_blank"><img class="flimage" src="../modules/mod_flexheader3/flexheader3_large.png" alt="Flexheader3"></a>
 			<div id="docucon">
 				Flexheader3 expands the existing possibilities to show pictures or load css files for flexible styling of your website. Flexheader3 makes it possible to assign an image or css-file at any point in your website, it does not depend on menu entries.
 			</div>
