@@ -1,0 +1,73 @@
+﻿table {
+	border-collapse: collapse;
+	width: 100%;
+	max-width: 700px;
+	border: 2px solid silver;
+	vertical-align: top;
+}
+table td {
+	padding: 5px;
+	border: 1px solid silver;
+	vertical-align: top;
+}
+img.flimage {
+	max-width: 100%;
+	border: 0px;
+	margin-bottom: 20px;
+}
+.form-horizontal .control-label {
+}
+label#jform_params_FLMULTIPLEMODULESWARNING-lbl {
+	border-top: 1px solid red;
+	padding: 2px;
+	color: red;
+}
+input#jform_params_default_image {
+	border: 1px solid red;
+	padding: 2px;
+	color: red;
+}
+iframe {
+	border: none;
+	width: 100%;
+	height: auto;
+	min-height: 500px;
+}
+#docucon {
+	width: auto;
+	max-width: 1400px;
+}
+#docucon div {
+	float: left;
+	width: 47%;
+	min-width: 400px;
+	padding: 1%;
+}
+.clear {
+	clear: both;
+}
+#flexheaderdebugwindow {
+	z-index: 999;
+	font-size: 12px !important;
+	line-height: 1em !important;
+	margin: 0px;
+	clear: both;
+	overflow: hidden;
+	padding: 10px;
+	width: auto;
+	display: block;
+	color: #1b1b1b;
+	border: 2px dotted red;
+	left: 0;
+	position: fixed;
+}
+pre.divcontent {
+	border: 3px dotted red;
+}
+#flexheaderdebugwindow #flexheaderdebugwindowlogo {
+	width: auto;
+	display: block;
+	border: none;
+	box-shadow: none;
+	float: right;
+}
