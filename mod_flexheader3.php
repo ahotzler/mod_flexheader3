@@ -389,7 +389,7 @@ $flexheader3 = modflexheader3Helper::flexheader3 (
 	$fl_module_title
 	);
 	
-require( JModuleHelper::getLayoutPath( 'mod_flexheader3' ) );
+require JModuleHelper::getLayoutPath( 'mod_flexheader3', $params->get('layout', 'default') );
 
 //unset all vars
 unset (
