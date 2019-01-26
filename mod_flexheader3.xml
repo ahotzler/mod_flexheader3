@@ -80,14 +80,14 @@
 			<option value="img">FLDISPLAYMODEIMG</option>
 			<option value="div">FLDISPLAYMODEDIV</option>
 		</field>
-		<field name="div_content" type="textarea" filter="raw" rows="5" cols="40" default="" label="FLDIVMODECONTENT" description="FLDIVMODECONTENTDESC" />
+		<field name="div_content" type="textarea" filter="safehtml" rows="5" cols="40" default="" label="FLDIVMODECONTENT" description="FLDIVMODECONTENTDESC" />
 
 		<field name="alt_text_type" type="list" default="pagetitle" label="FLALTTEXTTYPE" description="FLALTTEXTTYPEDESC">
 			<option value="none">FLALTTEXTTYPENONE</option>
 			<option value="pagetitle">FLALTTEXTTYPETITLE</option>
 			<option value="owntext">FLALTTEXTTYPEOWN</option>
 		</field>
-		<field name="alt_text" type="textarea" cols="40" default="flexheader3" label="FLALTTEXT" description="FLALTTEXTDESC" />
+		<field name="alt_text" type="textarea" filter="safehtml" cols="40" default="flexheader3" label="FLALTTEXT" description="FLALTTEXTDESC" />
 
 		<field name="linksupport" type="radio" default="0" class="switcher btn-group btn-group-yesno" label="FLLINKSUPPORT" description="FLLINKSUPPORTDESC">		
 			<option value="0">JNO</option>
