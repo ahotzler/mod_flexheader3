@@ -27,12 +27,6 @@ input#jform_params_default_image {
 	padding: 2px;
 	color: red;
 }
-iframe {
-	border: none;
-	width: 100%;
-	height: auto;
-	min-height: 500px;
-}
 #docucon {
 	width: auto;
 	max-width: 1400px;
