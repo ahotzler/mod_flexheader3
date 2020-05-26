@@ -98,7 +98,11 @@ class modflexheader3Helper{
 	$fl_showebugtoguest,
 	$fl_module_id,
 	$fl_addborderzerotoimage,
-	$fl_module_title
+	$fl_module_title,
+	$fl_namederintemid,
+	$fl_namederparentid,
+	$fl_namedercategory,
+	$fl_namederparentcategory
 		){
 				//Debug
 				if ($fl_showebugtoguest OR !$fl_userisguest) {

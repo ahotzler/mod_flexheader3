@@ -4,10 +4,10 @@
 	<author>Andre Hotzler</author>
 	<authorEmail>flexheader2019-1@nspw.andrehotzler.de</authorEmail>
 	<authorUrl>http://www.andrehotzler.de</authorUrl>
-	<creationDate>02.05.2019</creationDate>
-	<copyright>Copyright (C) 2008, 2009, 2010, 2011, 2012, 2014, 2015, 2016, 2017, 2018, 2019 Andre Hotzler. All rights reserved.</copyright>
+	<creationDate>26.05.2020</creationDate>
+	<copyright>Copyright (C) 2008, 2009, 2010, 2011, 2012, 2014, 2015, 2016, 2017, 2018, 2019, 2020 Andre Hotzler. All rights reserved.</copyright>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
-	<version>2.3.3</version>
+	<version>2.3.5</version>
 	<description>
 		<![CDATA[<link rel="stylesheet" type="text/css" href="../modules/mod_flexheader3/flexheader3_backend.css" />
 		<a href="https://www.andrehotzler.de/" target="_blank"><img class="flimage" src="../modules/mod_flexheader3/flexheader3_large.png" alt="Flexheader3"></a>
@@ -15,7 +15,7 @@
 				Flexheader3 expands the existing possibilities to show pictures or load css files for flexible styling of your website. Flexheader3 makes it possible to assign an image or css-file at any point in your website, it does not depend on menu entries.
 			</div>
 		<h2>Online-Documentation:</h2>
-		 <iframe src="https://www.andrehotzler.de/de/projekte/flexheader-wechselnde-headerbilder-fuer-joomla.html"></iframe> 	
+		 <iframe width="100%" height="500px" src="https://www.andrehotzler.de/de/projekte/flexheader-wechselnde-headerbilder-fuer-joomla.html"></iframe> 	
 		<div class="clear">&nbsp;</div>
 ]]>
 	</description>
@@ -38,7 +38,7 @@
 	<config>
 	<fields name="params">
 		<fieldset name="basic">
-		<field name="cversion" type="hidden" default="2.3.3" />
+		<field name="cversion" type="hidden" default="2.3.5" />
 		<field name="debug" type="list" default="normal" label="FLDEBUG" description="FLDEBUGDESC">
 			<option value="no">None</option>
 			<option value="normal">FLDEBUGUSER</option>
@@ -144,6 +144,10 @@
 			<option value="100">100</option>
 		</field>
 		<field name="moduleclass_sfx" type="text" default=" flexheader" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+		<field name="name_of_itemid" type="text" default="itemid" label="FLNAMEOFITEMID" description="FLNAMEOFITEMIDDESC" />
+		<field name="name_of_parent" type="text" default="parent" label="FLNAMEOFPARENT" description="FLNAMEOFPARENTDESC" />		
+		<field name="name_of_category" type="text" default="category" label="FLNAMEOFCATEGORY" description="FLNAMEOFCATEGORYDEASC" />		
+		<field name="name_of_parentcategory" type="text" default="parentcategory" label="FLNAMEOFPARENTCATEGORY" description="FLNAMEOFPARENTCATEGORYDEASC" />		
 		<field name="css_class" type="text" default="flexheader" label="FLFL2CSSCLASS" description="FLFL2CSSCLASSDESC" />
 		<field name="cache" type="list" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC" default="0">
 			<option value="1">JGLOBAL_USE_GLOBAL</option>

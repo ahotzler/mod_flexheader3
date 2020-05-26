@@ -16,12 +16,17 @@ defined('_JEXEC') or die;
 
 
 //Vars
+
 $user = JFactory::getUser();
 if (!$user->guest) {
 	$fl_userisguest = '0';
 } else {
 	$fl_userisguest = '1';
 }
+$fl_namederintemid = trim( $params->get( 'name_of_itemid' ) );
+$fl_namederparentid = trim( $params->get( 'name_of_parent' ) );
+$fl_namedercategory  = trim( $params->get( 'name_of_category' ) );
+$fl_namederparentcategory = trim( $params->get( 'name_of_parentcategory' ) );
 $fl_module_id = "moduleid".$module->id;
 $fl_module_title = $module->title;
 $fl_showebugtoguest = trim( $params->get( 'showebugtoguest' ) );
@@ -94,7 +99,7 @@ else {
 		$fl_id ="";
 	};
 
-$fl_itemid = 'itemid'.intval($jinput->get('Itemid', 0) );
+$fl_itemid = $fl_namederintemid.intval($jinput->get('Itemid', 0) );
 if ($jinput->get('catid', 0)) {
 $fl_catid = intval($jinput->get('catid', 0) ); }
 	else { $fl_catid = ""; };
@@ -109,7 +114,7 @@ $help_menu = JFactory::getApplication()->getMenu();
 $active_help = $help_menu->getActive();
 if (is_object($active_help)) {
 	$fl_parentmenu = intval($active_help->parent_id);
-	$fl_parentid = 'parent'.$fl_parentmenu ;
+	$fl_parentid = $fl_namederparentid.$fl_parentmenu ;
 } else {
         $fl_parentid = JText::_("FLNOPARENT");
 }
@@ -132,7 +137,7 @@ if($fl_view=='article') {
 	$database->setQuery($query);
 	$row = $database->loadObject();
 	$category = $row->catid;
-	$categoryid = 'category'.$category;
+	$categoryid = $fl_namedercategory.$category;
 	$query = "SELECT parent_id FROM #__categories WHERE id=".(int)$category ;
 	$database->setQuery($query);
 	$row = $database->loadObject();
@@ -141,12 +146,12 @@ if($fl_view=='article') {
 		$parentcategoryid = JText::_("FLNOPARENTCATEGORY");		
 	}
 	else {
-		$parentcategoryid = 'parentcategory'.$parentcategory;
+		$parentcategoryid = $fl_namederparentcategory.$parentcategory;
 	}
 }
 if($fl_view=='category') {
 	$category = $input->getInt( 'id', 0  );
-	$categoryid = 'category'.$category;
+	$categoryid = $fl_namedercategory.$category;
 	$query = "SELECT parent_id FROM #__categories WHERE id=".(int)$category;
 	$database->setQuery($query);
 	$row = $database->loadObject();
@@ -157,7 +162,7 @@ if($fl_view=='category') {
 		$parentcategoryid = JText::_("FLNOPARENTCATEGORY");		
 	}
 	else {
-		$parentcategoryid = 'parentcategory'.$parentcategory;
+		$parentcategoryid = $fl_namederparentcategory.$parentcategory;
 	}
 	} else {
 		$parentcategory = '0';
@@ -386,7 +391,11 @@ $flexheader3 = modflexheader3Helper::flexheader3 (
 	$fl_showebugtoguest,
 	$fl_module_id,
 	$fl_addborderzerotoimage,
-	$fl_module_title
+	$fl_module_title,
+	$fl_namederintemid,
+	$fl_namederparentid,
+	$fl_namedercategory,
+	$fl_namederparentcategory
 	);
 	
 require JModuleHelper::getLayoutPath( 'mod_flexheader3', $params->get('layout', 'default') );
@@ -477,6 +486,10 @@ unset (
 	$fl_showebugtoguest,
 	$fl_module_id,
 	$fl_addborderzerotoimage,
-	$fl_module_title
+	$fl_module_title,
+	$fl_namederintemid,
+	$fl_namederparentid,
+	$fl_namedercategory,
+	$fl_namederparentcategory
 	);
 ?>
