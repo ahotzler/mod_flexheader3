@@ -210,7 +210,12 @@ class modflexheader3Helper{
 										echo 'Default FS CSS: '.$fl_fs_css_default_name.'<br />';
 										echo 'Default Web CSS: '.$fl_web_css_default_name.'<br />';											
 										echo 'Web Output  CSS: '.$fl_web_output_css.'<br />';	
-										echo 'Output CSS: '.$fl_output_css.'<br />';	
+										echo 'Output CSS: '.$fl_output_css.'<br />';
+										
+										echo 'itemid prefix: '.$fl_namederintemid.'<br />';	
+										echo 'parentid prefix: '.$fl_namederparentid.'<br />';	
+										echo 'categoryid prefix: '.$fl_namedercategory.'<br />';	
+										echo 'parentcategoryid prefix: '.$fl_namederparentcategory.'<br />';	
 										echo '</div>';				
 								}
 						echo '</div>';
