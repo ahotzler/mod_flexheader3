@@ -28,6 +28,19 @@ $fl_namederparentid = trim( $params->get( 'name_of_parent' ) );
 $fl_namedercategory  = trim( $params->get( 'name_of_category' ) );
 $fl_namederparentcategory = trim( $params->get( 'name_of_parentcategory' ) );
 $fl_module_id = "moduleid".$module->id;
+
+if (!isset($fl_namederintemid)) {
+	$fl_namederintemid = "itemid";
+}
+if (!isset($fl_namedercategory)) {
+	$fl_namedercategory = "parent";
+}
+if (!isset($fl_namederparentcategory)) {
+	$fl_namederintemid = "category";
+}
+if (!isset($fl_namederparentcategory)) {
+	$fl_namederintemid = "parentcategory";
+}
 $fl_module_title = $module->title;
 $fl_showebugtoguest = trim( $params->get( 'showebugtoguest' ) );
 $jinput = JFactory::getApplication()->input;
