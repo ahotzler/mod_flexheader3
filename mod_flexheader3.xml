@@ -2,18 +2,20 @@
 <extension type="module" version="3.0" method="upgrade" client="site">
 	<name>Flexheader3</name>
 	<author>Andre Hotzler</author>
-	<authorEmail>flexheader2021-1@nspw.andrehotzler.de</authorEmail>
+	<authorEmail>flexheader2019-1@nspw.andrehotzler.de</authorEmail>
 	<authorUrl>http://www.andrehotzler.de</authorUrl>
-	<creationDate>04.03.2021</creationDate>
+	<creationDate>08.11.2021</creationDate>
 	<copyright>Copyright (C) 2008, 2009, 2010, 2011, 2012, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021 Andre Hotzler. All rights reserved.</copyright>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
-	<version>2.4.1</version>
+	<version>2.3.6</version>
 	<description>
 		<![CDATA[<link rel="stylesheet" type="text/css" href="../modules/mod_flexheader3/flexheader3_backend.css" />
 		<a href="https://www.andrehotzler.de/" target="_blank"><img class="flimage" src="../modules/mod_flexheader3/flexheader3_large.png" alt="Flexheader3"></a>
 			<div id="docucon">
 				Flexheader3 expands the existing possibilities to show pictures or load css files for flexible styling of your website. Flexheader3 makes it possible to assign an image or css-file at any point in your website, it does not depend on menu entries.
 			</div>
+		<h2>Online-Documentation:</h2>
+		 <a href ="https://www.andrehotzler.de/de/projekte/flexheader-wechselnde-headerbilder-fuer-joomla.html">Online-Documentation for >Flexheader3</a> 	
 		<div class="clear">&nbsp;</div>
 ]]>
 	</description>
@@ -36,14 +38,14 @@
 	<config>
 	<fields name="params">
 		<fieldset name="basic">
-		<field name="cversion" type="hidden" default="2.4.1" />
+		<field name="cversion" type="hidden" default="2.3.6" />
 		<field name="debug" type="list" default="normal" label="FLDEBUG" description="FLDEBUGDESC">
 			<option value="no">None</option>
 			<option value="normal">FLDEBUGUSER</option>
 			<option value="dev">FLDEBUGDEVELOPER</option>
 		</field>
 		
-		<field name="showebugtoguest" type="radio" layout="joomla.form.field.radio.switcher" class="switcher btn-group btn-group-yesno" default="1" label="FLHIDEDEBUGGUEST" description="FLHIDEDEBUGGUESTDESC">
+		<field name="showebugtoguest" type="radio" class="switcher btn-group btn-group-yesno" layout="joomla.form.field.radio.switcher"  default="1" label="FLHIDEDEBUGGUEST" description="FLHIDEDEBUGGUESTDESC">
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 		</field>			
@@ -60,10 +62,9 @@
 			<option value="jpeg">jpeg</option>
 			<option value="gif">gif</option>
 			<option value="png">png</option>
-			<option value="svg">svg</option>
 		</field>
 
-		<field name="specifydimensions" type="radio" layout="joomla.form.field.radio.switcher" class="switcher btn-group btn-group-yesno" default="1" label="FLSPECIFYDIMESIONS" description="FLSPECIFYDIMESIONSDESC">
+		<field name="specifydimensions" type="radio" class="switcher btn-group btn-group-yesno" layout="joomla.form.field.radio.switcher"  default="1" label="FLSPECIFYDIMESIONS" description="FLSPECIFYDIMESIONSDESC">
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 		</field>	
@@ -90,22 +91,22 @@
 		</field>
 		<field name="alt_text" type="textarea" filter="safehtml" cols="40" default="flexheader3" label="FLALTTEXT" description="FLALTTEXTDESC" />
 
-		<field name="linksupport" type="radio" default="0" layout="joomla.form.field.radio.switcher" class="switcher btn-group btn-group-yesno" label="FLLINKSUPPORT" description="FLLINKSUPPORTDESC">		
+		<field name="linksupport" type="radio" default="0" class="switcher btn-group btn-group-yesno" layout="joomla.form.field.radio.switcher"  label="FLLINKSUPPORT" description="FLLINKSUPPORTDESC">		
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 		</field>		
 		<field name="linktarget" type="text" default="/" label="FLLINKTARGET" description="FLLINKTARGETDESC" />			
 		
-		<field name="jfsupport" type="radio" default="0" layout="joomla.form.field.radio.switcher" class="switcher btn-group btn-group-yesno" label="FLJFSUPPORT" description="FLJFSUPPORTDESC">
+		<field name="jfsupport" type="radio" default="0" class="switcher btn-group btn-group-yesno" layout="joomla.form.field.radio.switcher"  label="FLJFSUPPORT" description="FLJFSUPPORTDESC">
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 		</field>
 
-		<field name="cssfilesupport" type="radio" default="0" layout="joomla.form.field.radio.switcher" class="switcher btn-group btn-group-yesno" label="FLCSSFILESUPPORT" description="FLCSSFILESUPPORTDESC">
+		<field name="cssfilesupport" type="radio" default="0" class="switcher btn-group btn-group-yesno" layout="joomla.form.field.radio.switcher"  label="FLCSSFILESUPPORT" description="FLCSSFILESUPPORTDESC">
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 		</field>	
-		<field name="addborderzerotoimage" type="radio" layout="joomla.form.field.radio.switcher" class="switcher btn-group btn-group-yesno" default="1" label="FLADDBORDERZEROTOIMAGE" description="FLADDBORDERZEROTOIMAGEDESC">
+		<field name="addborderzerotoimage" type="radio" class="switcher btn-group btn-group-yesno" layout="joomla.form.field.radio.switcher"  default="1" label="FLADDBORDERZEROTOIMAGE" description="FLADDBORDERZEROTOIMAGEDESC">
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 		</field>					
