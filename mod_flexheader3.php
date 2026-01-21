@@ -113,7 +113,6 @@ $fl_jroot = JPATH_ROOT.'/';
 $lf_linksupport = $params->get( 'linksupport' );
 $fl_cssfilesupport = $params->get( 'cssfilesupport' );
 $fl_linktarget = trim( $params->get( 'linktarget' ) );
-$fl_vmartsupport = trim( $params->get( 'vmartsupport' ) );
 $help_menu = Joomla\CMS\Factory::getApplication()->getMenu();
 $active_help = $help_menu->getActive();
 if (is_object($active_help)) {
