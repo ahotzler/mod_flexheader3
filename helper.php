@@ -13,6 +13,10 @@
  * other free or open source software licenses.
  */
 
+use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\Uri\Uri;
+
 class modflexheader3Helper{
 	public static function  flexheader3(
 	$fl_cversion,
@@ -110,9 +114,9 @@ class modflexheader3Helper{
 				
 					echo '<script>jQuery(function() {jQuery( "#flexheaderdebugwindow" ).resizable();});</script>';
 					echo '<script>jQuery(function() {jQuery( "#flexheaderdebugwindow" ).draggable();});</script>';
-					JHtml::_('script', '//code.jquery.com/ui/1.11.3/jquery-ui.min.js');
-					JHtml::_('stylesheet', '//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css');
-					JHtml::_('stylesheet', JUri::root() .'/modules/mod_flexheader3/flexheader3_backend.css');
+					HTMLHelper::_('script', '//code.jquery.com/ui/1.11.3/jquery-ui.min.js');
+					HTMLHelper::_('stylesheet', '//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css');
+					HTMLHelper::_('stylesheet', Uri::root() .'/modules/mod_flexheader3/flexheader3_backend.css');
 						echo '<div id="flexheaderdebugwindow" style="
 															filter:alpha(opacity='.$fl_debug_opac.');
 															-moz-opacity:.'.$fl_debug_opac.';
@@ -123,18 +127,18 @@ class modflexheader3Helper{
 														  <img id="flexheaderdebugwindowlogo" alt="flexheader3" src="'.$fl_webdirname.'modules/mod_flexheader3/flexheader3.png" />';
 															
 						echo '<div class="ui-icon ui-icon-arrow-4" style="z-index: 90; margin-bottom: 5px;"></div>';
-						echo '<strong>'.JText::_("FLDEBUGINTRO").'</strong><br /><br />';
-						echo JText::_("FLPACEIMAGESHERE").'<strong> '.$fl_web_image_location.'</strong><br />'.JText::_("FLPACEIMAGESHEREFULLPATH").'<strong> '.$fl_fs_image_location.'</strong><br /><br />';
-						echo JText::_("FLIMAGENAME").'<strong> '.$fl_image_contentmenu_name.$fl_jflang.'</strong>'.$fl_file_type.'<br />';
-						echo  JText::_("FLIMAGEMNAME").'<strong> '.$fl_image_content_name.$fl_jflang.'</strong>'.$fl_file_type.'<br />';
-						echo  JText::_("FLIMAGEPARENTNAME").'<strong> '.$fl_image_parent_name.$fl_jflang.'</strong>'.$fl_file_type.'<br />';
-						echo  JText::_("FLIMAGECATEGORYNAME").'<strong> '.$fl_image_category_name.$fl_jflang.'</strong>'.$fl_file_type.'<br />';
-						echo  JText::_("FLIMAGEPARENTCATEGORYNAME").'<strong> '.$fl_image_parentcategory_name.$fl_jflang.'</strong>'.$fl_file_type.'<br />';
-						echo  JText::_("FLIMAGECOMPONENTNAME").'<strong> '.$fl_image_component_name.$fl_jflang.'</strong>'.$fl_file_type.'<br />';
+						echo '<strong>'.Text::_("FLDEBUGINTRO").'</strong><br /><br />';
+						echo Text::_("FLPACEIMAGESHERE").'<strong> '.$fl_web_image_location.'</strong><br />'.Text::_("FLPACEIMAGESHEREFULLPATH").'<strong> '.$fl_fs_image_location.'</strong><br /><br />';
+						echo Text::_("FLIMAGENAME").'<strong> '.$fl_image_contentmenu_name.$fl_jflang.'</strong>'.$fl_file_type.'<br />';
+						echo  Text::_("FLIMAGEMNAME").'<strong> '.$fl_image_content_name.$fl_jflang.'</strong>'.$fl_file_type.'<br />';
+						echo  Text::_("FLIMAGEPARENTNAME").'<strong> '.$fl_image_parent_name.$fl_jflang.'</strong>'.$fl_file_type.'<br />';
+						echo  Text::_("FLIMAGECATEGORYNAME").'<strong> '.$fl_image_category_name.$fl_jflang.'</strong>'.$fl_file_type.'<br />';
+						echo  Text::_("FLIMAGEPARENTCATEGORYNAME").'<strong> '.$fl_image_parentcategory_name.$fl_jflang.'</strong>'.$fl_file_type.'<br />';
+						echo  Text::_("FLIMAGECOMPONENTNAME").'<strong> '.$fl_image_component_name.$fl_jflang.'</strong>'.$fl_file_type.'<br />';
 						echo '<br />';
-						echo JText::_("FLUSEDIMAGE").'<strong> ';if ($fl_output_image) {echo $fl_output_image.$fl_jflang.$fl_file_type; } else {echo JText::_("FLNOIMAGEFOUND").'<br />'.$fl_image_default_name.$fl_jflang.$fl_file_type;}; echo '</strong><br />';
+						echo Text::_("FLUSEDIMAGE").'<strong> ';if ($fl_output_image) {echo $fl_output_image.$fl_jflang.$fl_file_type; } else {echo Text::_("FLNOIMAGEFOUND").'<br />'.$fl_image_default_name.$fl_jflang.$fl_file_type;}; echo '</strong><br />';
 						if ($fl_cssfilesupport == "1") {
-							echo JText::_("FLUSEDCSS").'<strong> ';if ($fl_web_output_css) {echo $fl_output_css.$fl_jflang.'.css'; } else {echo JText::_("FLNOCSSFOUND").'<br />'.$fl_image_default_name.$fl_jflang.".css";}; echo '</strong><br />';	
+							echo Text::_("FLUSEDCSS").'<strong> ';if ($fl_web_output_css) {echo $fl_output_css.$fl_jflang.'.css'; } else {echo Text::_("FLNOCSSFOUND").'<br />'.$fl_image_default_name.$fl_jflang.".css";}; echo '</strong><br />';	
 							};
 							if ($fl_dev_debug) {
 									echo '<br /><strong>Developer Debug Information</strong><br /><br />';
@@ -277,7 +281,7 @@ class modflexheader3Helper{
 					if ($fl_css_class) $out.= '-'.$fl_css_class;
 					$out.= '" style="background-color: red; color: white; width:'.$fl_width.$fl_dimensionstype.'; height:'.$fl_height.$fl_dimensionstype.';';
 					$out.= '">';
-					$out.= JText::_("FLNODEFAULTIMAGEFOUND").'<br />'.$fl_fs_image_default_name;
+					$out.= Text::_("FLNODEFAULTIMAGEFOUND").'<br />'.$fl_fs_image_default_name;
 					$out.= '</div>';
 				};
 				$out.= "<!-- flexheader3 end -->";

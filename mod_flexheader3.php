@@ -14,10 +14,14 @@
 // no direct access
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Factory;
+use Joomla\CMS\Uri\Uri;
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\Helper\ModuleHelper;
 
 //Vars
 
-$user = JFactory::getUser();
+$user = Joomla\CMS\Factory::getUser();
 if (!$user->guest) {
 	$fl_userisguest = '0';
 } else {
@@ -30,7 +34,7 @@ $fl_namederparentcategory = trim( $params->get( 'name_of_parentcategory' ) );
 $fl_module_id = "moduleid".$module->id;
 $fl_module_title = $module->title;
 $fl_showebugtoguest = trim( $params->get( 'showebugtoguest' ) );
-$jinput = JFactory::getApplication()->input;
+$jinput = Joomla\CMS\Factory::getApplication()->input;
 $fl_component =  $jinput->get('option');
 $fl_cversion = trim( $params->get( 'cversion' ) );
 $fl_folder_location	= trim( $params->get( 'folder_location' ) );
@@ -63,7 +67,7 @@ $fl_file_type ='.swf'; };
 if ($params->get( 'div_content' )) {
 	$fl_div_content= trim( $params->get( 'div_content' ) ); }
 	else { $fl_div_content= ""; };
-$fl_document = JFactory::getDocument();
+$fl_document = Joomla\CMS\Factory::getDocument();
 $fl_pagetitle = $fl_document->getTitle();
 $flalttexttype = ( $params->get( 'alt_text_type' ) );
 if ( $flalttexttype  == "pagetitle" ) {
@@ -78,7 +82,7 @@ $fl_jfsupport = trim( $params->get( 'jfsupport' ) );
 
 $fl_jflang = "";
 if ($fl_jfsupport) { 
-	$lang = JFactory::getLanguage();
+	$lang = Joomla\CMS\Factory::getLanguage();
  $fl_jflang = "-".$lang->getTag();
 }
 
@@ -104,34 +108,34 @@ if ($jinput->get('catid', 0)) {
 $fl_catid = intval($jinput->get('catid', 0) ); }
 	else { $fl_catid = ""; };
 $fl_layout = trim($jinput->get('layout', 0) );
-$fl_webdirname = JURI::base($pathonly=true).'/';
+$fl_webdirname = Uri::base(true) . '/';
 $fl_jroot = JPATH_ROOT.'/';
 $lf_linksupport = $params->get( 'linksupport' );
 $fl_cssfilesupport = $params->get( 'cssfilesupport' );
 $fl_linktarget = trim( $params->get( 'linktarget' ) );
 $fl_vmartsupport = trim( $params->get( 'vmartsupport' ) );
-$help_menu = JFactory::getApplication()->getMenu();
+$help_menu = Joomla\CMS\Factory::getApplication()->getMenu();
 $active_help = $help_menu->getActive();
 if (is_object($active_help)) {
 	$fl_parentmenu = intval($active_help->parent_id);
 	$fl_parentid = $fl_namederparentid.$fl_parentmenu ;
 } else {
-        $fl_parentid = JText::_("FLNOPARENT");
+        $fl_parentid = Text::_("FLNOPARENT");
 }
 if (isset($fl_parentmenu)) {
 if ($fl_parentmenu=='1') {
-	        $fl_parentid = JText::_("FLNOPARENT");
+	        $fl_parentid = Text::_("FLNOPARENT");
 	      }
 		  }
 		
 //combined vars    
 
 //Category and parentcategory
-$input=JFactory::getApplication()->input;
-$categoryid = JText::_("FLNOCATEGORY");
-$parentcategoryid = JText::_("FLNOPARENTCATEGORY");
+$input=Joomla\CMS\Factory::getApplication()->input;
+$categoryid = Text::_("FLNOCATEGORY");
+$parentcategoryid = Text::_("FLNOPARENTCATEGORY");
 $content_id = $input->getInt( 'id', 0);
-$database = JFactory::getDBO();
+$database = Joomla\CMS\Factory::getDBO();
 if($fl_view=='article') {
 	$query = "SELECT catid FROM #__content WHERE id=".(int)$content_id;
 	$database->setQuery($query);
@@ -143,7 +147,7 @@ if($fl_view=='article') {
 	$row = $database->loadObject();
 	$parentcategory = $row->parent_id;
 	if ($parentcategory=='1') {
-		$parentcategoryid = JText::_("FLNOPARENTCATEGORY");		
+		$parentcategoryid = Text::_("FLNOPARENTCATEGORY");		
 	}
 	else {
 		$parentcategoryid = $fl_namederparentcategory.$parentcategory;
@@ -159,7 +163,7 @@ if($fl_view=='category') {
 	$parentcategory = $row->parent_id;
 	
 	if ($parentcategory=='1') {
-		$parentcategoryid = JText::_("FLNOPARENTCATEGORY");		
+		$parentcategoryid = Text::_("FLNOPARENTCATEGORY");		
 	}
 	else {
 		$parentcategoryid = $fl_namederparentcategory.$parentcategory;
@@ -398,7 +402,10 @@ $flexheader3 = modflexheader3Helper::flexheader3 (
 	$fl_namederparentcategory
 	);
 	
-require JModuleHelper::getLayoutPath( 'mod_flexheader3', $params->get('layout', 'default') );
+require \Joomla\CMS\Helper\ModuleHelper::getLayoutPath(
+    'mod_flexheader3',
+    $params->get('layout', 'default')
+);
 
 //unset all vars
 unset (
